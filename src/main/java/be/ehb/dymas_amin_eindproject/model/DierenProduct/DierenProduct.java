@@ -10,7 +10,7 @@ import javax.validation.constraints.NotNull;
 import java.math.BigDecimal;
 
 /**
- * @author Ahmadi Baloutaki Amin
+ * @author Ghysels dymas
  * */
 
 @Entity
