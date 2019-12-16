@@ -11,21 +11,22 @@ import org.springframework.web.bind.annotation.RequestMethod;
 
 /**
  * @author Ahmadi Baloutaki Amin
- * */
+ */
 @Controller
 public class IndexController {
 
     @Autowired
     DierenProductDAO dao;
 
-/*een modelatribute aangemaakt om alle producten te kunnen overlopen met Iterable */
+    /*een modelatribute aangemaakt om alle producten te kunnen overlopen met Iterable */
     @ModelAttribute(value = "allProducts")
-    public Iterable<DierenProduct>getAllProducts(){
+    public Iterable<DierenProduct> getAllProducts() {
         return dao.findAll();
     }
-/*RequestMapping om op de pagina index terecht tekomen*/
-    @RequestMapping(value = {"/index","/"},method = RequestMethod.GET)
-    public String showIndex(ModelMap map){
+
+    /*RequestMapping om op de pagina index terecht tekomen*/
+    @RequestMapping(value = {"/index", "/"}, method = RequestMethod.GET)
+    public String showIndex(ModelMap map) {
         return "index";
     }
 }
