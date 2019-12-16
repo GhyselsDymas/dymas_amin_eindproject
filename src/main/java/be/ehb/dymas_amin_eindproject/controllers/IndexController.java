@@ -19,7 +19,7 @@ public class IndexController {
     DierenProductDAO dao;
 
 /*een modelatribute aangemaakt om alle producten te kunnen overlopen met Iterable */
-    @ModelAttribute(value = "allPruducts")
+    @ModelAttribute(value = "allProducts")
     public Iterable<DierenProduct>getAllProducts(){
         return dao.findAll();
     }
