@@ -25,19 +25,24 @@
 
 <body>
 
+<nav th:replace="~{menu::nav_menu(index)}"></nav>
+
 <div class="container-fluid">
 
     <!--Plaatsen van al onze producten-->
-    <div th:each="product : ${allProducts}" class="OddStyle">
-        <img th:src="${product.imageLink}">
+        <div th:each="product : ${allProducts}" class="OddStyle">
+            <div  class="col-4">
+                <img th:src="${product.imageLink}">
 
-        <h1 th:text="${product.productNaam}"></h1>
+                <h1 th:text="${product.productNaam}"></h1>
 
-        <p th:text="${product.beschrijving}"></p>
-        <p th:text="${product.prijs}"></p>
+                <p th:text="${product.beschrijving}"></p>
+                <p th:text="${product.prijs}"></p>
 
-        <button>Voeg toe</button>
-    </div>
+                <button>Voeg toe</button>
+            </div>
+        </div>
+
 
 </div>
 
