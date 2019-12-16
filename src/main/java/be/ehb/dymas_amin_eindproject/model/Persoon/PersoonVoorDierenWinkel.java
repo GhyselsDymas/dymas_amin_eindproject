@@ -15,17 +15,19 @@ class PersoonVoorDierenWinkel {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int idPersoon;
-    @NotNull
+    @NotNull(message = "voornaam mag niet leeg zijn")
     private String voorNaam;
-    @NotNull
+    @NotNull(message = "achternaam mag niet leefg zijn")
     private String achterNaam;
-    @NotNull
+    @NotNull(message = "mail mag niet leeg zijn")
+    private String mail;
+    @NotNull(message = "telefoon-nummer mag niet leeg zijn")
     private String telefoonNr;
-    @NotNull
+    @NotNull(message = "straatnaam mag niet leeg zijn")
     private String straatNaam;
-    @NotNull
+    @NotNull(message = "huisnummer mag niet leeg zijn")
     private int huisNr;
-    @NotNull
+    @NotNull(message = "postcode mag niet leeg zijn")
     private String postcode;
 
     public PersoonVoorDierenWinkel() {
@@ -53,6 +55,14 @@ class PersoonVoorDierenWinkel {
 
     public void setAchterNaam(String achterNaam) {
         this.achterNaam = achterNaam;
+    }
+
+    public String getMail() {
+        return mail;
+    }
+
+    public void setMail(String mail) {
+        this.mail = mail;
     }
 
     public String getTelefoonNr() {
