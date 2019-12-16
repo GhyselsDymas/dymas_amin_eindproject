@@ -9,6 +9,10 @@ import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotNull;
 import java.math.BigDecimal;
 
+/**
+ * @author Ahmadi Baloutaki Amin
+ * */
+
 @Entity
 public class DierenProduct {
 
