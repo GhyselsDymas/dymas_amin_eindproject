@@ -32,8 +32,18 @@ public class DierenProduct {
     private String soort;
     @NotBlank (message = "Is het Voedsel, Speelgoed of iets anders")
     private String filterProduct;
+    @NotBlank (message = "Voeg een link van een afbeelding toe")
+    private String imageLink;
 
     public DierenProduct() {
+    }
+
+    public String getImageLink() {
+        return imageLink;
+    }
+
+    public void setImageLink(String imageLink) {
+        this.imageLink = imageLink;
     }
 
     public int getId() {
