@@ -28,7 +28,7 @@
 <div class="container-fluid">
 
     <!--Plaatsen van al onze producten-->
-    <div th:each="product : ${all}" class="OddStyle">
+    <div th:each="product : ${allPruducts}" class="OddStyle">
         <img th:src="${product.imageLink}">
 
         <h1 th:text="${product.productNaam}"></h1>
