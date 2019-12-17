@@ -9,6 +9,7 @@ import javax.validation.constraints.NotNull;
  * @author Ahmadi Baloutaki Amin
 * */
 @Entity
+public
 class PersoonVoorDierenWinkel {
 
     /*Ahmadi Baloutaki Amin */

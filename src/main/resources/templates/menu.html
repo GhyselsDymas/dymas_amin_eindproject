@@ -1,15 +1,15 @@
 <!DOCTYPE html>
 <html lang="en"
       xmlns:th="http://www.thymeleaf.org">
-
+<!-- @author Ghysels dymas & Ahmadi Baloutaki Amin-->
 <!--CSS-->
 <link rel="stylesheet" th:href="@{~/style.css}">
 
 <nav th:fragment="nav_menu(page)" id="menu_style">
     <ul>
         <li><a th:href="@{~/index}" th:class="${(page=='index')?'active':''}"> Home</a></li>
-        <li><a th:href="@{~/product}" th:class="${(page=='product')?'active':''}"> Product</a></li>
-        <li><a th:href="@{~/about}" th:class="${(page=='about')?'active':''}"> About</a></li>
+        <li><a th:href="@{~/login}" th:class="${(page=='login')?'active':''}"> Product</a></li>
+        <li><a th:href="@{~/winkelmaandje}" th:class="${(page=='winkelmaandje')?'active':''}"> About</a></li>
     </ul>
 </nav>
 
