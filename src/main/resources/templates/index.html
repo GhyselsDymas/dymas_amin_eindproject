@@ -24,7 +24,7 @@
 
 </head>
 
-<body>
+<form>
 
 <nav th:replace="~{menu::nav_menu(index)}"></nav>
 
@@ -33,24 +33,21 @@
     <img src="https://www.freewebheaders.com/wp-content/gallery/farm-animals/cute-golden-bunny-rabbit-website-header.jpg" class="img-fluid header">
 
     <!--Plaatsen van al onze producten-->
-
     <div th:each="product : ${allProducts}" class="OddStyle">
 
-            <div id="sizerShop">
-                    <img th:src="${product.imageLink}" class="img-fluid">
-
-                    <h1 th:text="${product.productNaam}"></h1>
-
-                    <p th:text="${product.beschrijving}"></p>
-                    <p th:text="${product.prijs}"></p>
-
-                    <button>Voeg toe</button>
+        <div class="card" style="width: 18rem;" id="sizerShop">
+            <img th:src="${product.imageLink}" class="card-img-top">
+            <div class="card-body">
+                <h5 class="card-title" th:text="${product.productNaam}"></h5>
+                <p class="card-text" th:text="${product.beschrijving}"></p>
+                <p class="card-text" th:text="${product.prijs}"></p>
+                <a href="#" class="btn btn-primary">Voeg toe</a>
             </div>
+        </div>
 
     </div>
-
 </div>
-
+</form>
 
 </body>
 

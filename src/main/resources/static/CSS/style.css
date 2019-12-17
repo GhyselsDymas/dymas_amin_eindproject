@@ -14,7 +14,7 @@
 #menu_style ul li{
     display: inline-block;
 }
-#menu_style ul li a {
+ul li a {
     padding: 5px;
     text-decoration: none;
     color: white;
@@ -28,6 +28,5 @@ i {
 .header {width: 100%;}
 
 #sizerShop {
-            width: 33.33%;
-            float: left;
-            height: 600px;}
+    float: left;
+}
