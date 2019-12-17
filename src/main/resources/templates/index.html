@@ -30,21 +30,24 @@
 
 <div class="container-fluid">
 
-    <img src="https://www.freewebheaders.com/wp-content/gallery/farm-animals/cute-golden-bunny-rabbit-website-header.jpg" class="img-fluid">
+    <img src="https://www.freewebheaders.com/wp-content/gallery/farm-animals/cute-golden-bunny-rabbit-website-header.jpg" class="img-fluid header">
 
     <!--Plaatsen van al onze producten-->
-        <div th:each="product : ${allProducts}" class="OddStyle">
-            <div>
-                <img th:src="${product.imageLink}">
 
-                <h1 th:text="${product.productNaam}"></h1>
+    <div th:each="product : ${allProducts}" class="OddStyle">
 
-                <p th:text="${product.beschrijving}"></p>
-                <p th:text="${product.prijs}"></p>
+            <div id="sizerShop">
+                    <img th:src="${product.imageLink}" class="img-fluid">
 
-                <button>Voeg toe</button>
+                    <h1 th:text="${product.productNaam}"></h1>
+
+                    <p th:text="${product.beschrijving}"></p>
+                    <p th:text="${product.prijs}"></p>
+
+                    <button>Voeg toe</button>
             </div>
-        </div>
+
+    </div>
 
 </div>
 
