@@ -1,5 +1,33 @@
+#menu_style{
+    width: 100%;
+    padding: 10px;
+    height: auto;
+    position: fixed;
+    top: 0;
+    left: 0;
+}
+#menu_style ul{
+    width: 100%;
+    list-style: none;
+    padding: 0;
+}
+#menu_style ul li{
+    display: inline-block;
+}
+#menu_style ul li a {
+    padding: 5px;
+    text-decoration: none;
+    color: white;
+}
+#rechtsplaatsen{
+    float: right;
+}
+i {
+    color: white;
+}
 .header {width: 100%;}
 
-#sizerShop {width: 33.33%;
+#sizerShop {
+            width: 33.33%;
             float: left;
             height: 600px;}

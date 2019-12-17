@@ -9,12 +9,11 @@
 <nav  th:fragment="nav_menu(page)" id="menu_style" class="navbar navbar-dark bg-dark">
     <ul>
         <li><a th:href="@{~/index}" th:class="${(page=='index')?'active':''}"> Home</a></li>
-        <li><a th:href="@{~/winkelmaand}" th:class="${(page=='winkelmaand')?'active':''}">winkelmaand</a></li>
         <li class="nav-item dropdown">
             <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                 Categorie
             </a>
-            <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+            <div id="a3" class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
                 <a class="dropdown-item" href="/productFilter/Habitat">Habitat</a>
                 <a class="dropdown-item" href="/productFilter/Speelgoed">Speelgoed</a>
                 <a class="dropdown-item" href="/productFilter/Voeding">Voeding</a>
@@ -31,6 +30,7 @@
                 <a class="dropdown-item" href="/soortFilter/Vis">Vis</a>
             </div>
         </li>
+        <li id="rechtsplaatsen"><a class="fas fa-shopping-cart" th:href="@{~/winkelmaand}" th:class="${(page=='winkelmaand')?'active':''}"><i class="fas fa-shopping-cart"></i></a></li>
     </ul>
 </nav>
 
