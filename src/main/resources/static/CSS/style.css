@@ -29,4 +29,10 @@ i {
 
 #sizerShop {
     float: left;
+    height: 600px;
 }
+
+#sizerShop .img-wrapper{
+    height: 400px;
+}
+
