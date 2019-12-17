@@ -27,10 +27,10 @@ public class ProductFilterController {
     }
 
     /*RequestMapping om op de pagina index terecht tekomen*/
-    @RequestMapping(value = {"/productFilter/{soort}"}, method = RequestMethod.GET)
-    public String showFilterSoort(ModelMap map , @PathVariable(value = "soort") String soort) {
-        map.addAttribute("TheSoort", dao.findBySoort(soort));
-        return "soortFilter";
+    @RequestMapping(value = {"/productFilter/{product}"}, method = RequestMethod.GET)
+    public String showFilterProduct(ModelMap map , @PathVariable(value = "product") String product) {
+        map.addAttribute("TheProduct", dao.findByFilterProduct(product));
+        return "productFilter";
     }
 }
 
