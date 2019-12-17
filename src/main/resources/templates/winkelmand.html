@@ -19,32 +19,9 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
     <script src="//cdn.datatables.net/1.10.20/js/jquery.dataTables.min.js"></script>
 
-    <title>Tim en Jeffrey</title>
-
+    <title>Title</title>
 </head>
-
 <body>
 
-<nav th:replace="~{menu::nav_menu(index)}"></nav>
-
-<div class="container-fluid">
-
-    <!--Plaatsen van al onze producten-->
-        <div th:each="product : ${allProducts}" class="OddStyle">
-            <div>
-                <img th:src="${product.imageLink}">
-
-                <h1 th:text="${product.productNaam}"></h1>
-
-                <p th:text="${product.beschrijving}"></p>
-                <p th:text="${product.prijs}"></p>
-
-                <button>Voeg toe</button>
-            </div>
-        </div>
-
-</div>
-
 </body>
-
 </html>
