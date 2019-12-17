@@ -1,7 +1,4 @@
 package be.ehb.dymas_amin_eindproject.controllers;
-/**
- * @author Ahmadi Baloutaki Amin
- * */
 
 import be.ehb.dymas_amin_eindproject.model.Persoon.PersoonVoorDierenWinkel;
 import be.ehb.dymas_amin_eindproject.model.Persoon.PersoonVoorDierenWinkelDAO;
