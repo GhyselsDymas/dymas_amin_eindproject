@@ -25,13 +25,9 @@ public class PersoonController {
     public PersoonVoorDierenWinkel userToSave() {
         return new PersoonVoorDierenWinkel();
     }
-    /*Om naar de loginpagina te kunnen gaan*/
-    @GetMapping(value = "/login")
-    public String show(){
-        return "login";
-    }
+
     /*validatie van nieuwe gebruiker + opslaan van nieuwe gebruiker*/
-    @RequestMapping(value ={"/login"} ,method = RequestMethod.POST)
+    @RequestMapping(value ={"/menu"} ,method = RequestMethod.POST)
     public String saveUser(@ModelAttribute("nUser") @Valid PersoonVoorDierenWinkel nProduct, BindingResult bindingResult){
         if(bindingResult.hasErrors())
             return "login";
