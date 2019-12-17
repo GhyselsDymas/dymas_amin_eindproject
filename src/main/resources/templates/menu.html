@@ -3,7 +3,6 @@
       xmlns:th="http://www.thymeleaf.org">
 <!-- @author Ghysels dymas & Ahmadi Baloutaki Amin-->
 <!--CSS-->
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 <link rel="stylesheet" th:href="@{~/style.css}">
 
 <nav  th:fragment="nav_menu(page)" id="menu_style" class="navbar navbar-dark bg-dark">
@@ -30,7 +29,9 @@
                 <a class="dropdown-item" href="/soortFilter/Vis">Vis</a>
             </div>
         </li>
-        <li id="rechtsplaatsen"><a class="fas fa-shopping-cart" th:href="@{~/winkelmand}" th:class="${(page=='winkelmand')?'active':''}">winkelmand</a></li>
+        <li id="rechtsplaatsen">
+            <a th:href="@{~/winkelmand}" style="color: white !important;">hdh</a>
+        </li>
     </ul>
 </nav>
 

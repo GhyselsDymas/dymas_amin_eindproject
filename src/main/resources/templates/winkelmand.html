@@ -24,7 +24,17 @@
 <body>
 <nav th:replace="~{menu::nav_menu(winkelmand)}"></nav>
 
+<div th:each="product : ${all}" class="OddStyle">
 
+    <div class="card" id="sizerShop">
+        <div class="img-wrapper"><img th:src="${product.imageLink}" class="card-img-top"></div>
+        <div class="card-body">
+            <h5 class="card-title" th:text="${product.productNaam}"></h5>
+            <p class="card-text" th:text="${product.beschrijving}"></p>
+            <p class="card-text" th:text="${product.prijs}"></p>
+        </div>
+    </div>
 
+</div>
 </body>
 </html>

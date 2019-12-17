@@ -35,13 +35,13 @@
     <!--Plaatsen van al onze producten-->
     <div th:each="product : ${allProducts}" class="OddStyle">
 
-        <div class="card" style="width: 18rem;" id="sizerShop">
+        <div class="card" id="sizerShop">
             <div class="img-wrapper"><img th:src="${product.imageLink}" class="card-img-top"></div>
             <div class="card-body">
                 <h5 class="card-title" th:text="${product.productNaam}"></h5>
                 <p class="card-text" th:text="${product.beschrijving}"></p>
                 <p class="card-text" th:text="${product.prijs}"></p>
-                <a href="#" class="btn btn-primary">Voeg toe</a>
+                <a th:href="@{/winkelmand/add/{id}(id = ${product.id})}" class="btn btn-primary">Voeg toe</a>
             </div>
         </div>
 
