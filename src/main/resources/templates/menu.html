@@ -5,11 +5,31 @@
 <!--CSS-->
 <link rel="stylesheet" th:href="@{~/style.css}">
 
-<nav th:fragment="nav_menu(page)" id="menu_style">
+<nav  th:fragment="nav_menu(page)" id="menu_style" class="navbar navbar-dark bg-dark">
     <ul>
         <li><a th:href="@{~/index}" th:class="${(page=='index')?'active':''}"> Home</a></li>
-        <li><a th:href="@{~/login}" th:class="${(page=='login')?'active':''}"> Product</a></li>
         <li><a th:href="@{~/winkelmaand}" th:class="${(page=='winkelmaand')?'active':''}"> About</a></li>
+        <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                Categorie
+            </a>
+            <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                <a class="dropdown-item" href="/productFilter/Habitat">Habitat</a>
+                <a class="dropdown-item" href="/productFilter/Speelgoed">Speelgoed</a>
+                <a class="dropdown-item" href="/productFilter/Voeding">Voeding</a>
+            </div>
+        </li>
+        <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink1" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                Dierensoort
+            </a>
+            <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                <a class="dropdown-item" href="/soortFilter/Amphibie">Amphibie</a>
+                <a class="dropdown-item" href="/soortFilter/Honden">Honden</a>
+                <a class="dropdown-item" href="/soortFilter/Reptiel">Reptiel</a>
+                <a class="dropdown-item" href="/soortFilter/Vis">Vis</a>
+            </div>
+        </li>
     </ul>
 </nav>
 
