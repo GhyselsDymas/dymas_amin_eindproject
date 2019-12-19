@@ -30,8 +30,8 @@ class PersoonVoorDierenWinkel {
     private String telefoonNr;
     @NotEmpty(message = "straatnaam mag niet leeg zijn")
     private String straatNaam;
-    @NotNull(message = "huisnummer mag niet leeg zijn")
-    private int huisNr;
+    @NotEmpty(message = "huisnummer mag niet leeg zijn")
+    private String huisNr;
     @NotEmpty(message = "postcode mag niet leeg zijn")
     private String postCode;
     @NotEmpty(message = "stad mag niet leeg zijn")
@@ -88,11 +88,11 @@ class PersoonVoorDierenWinkel {
         this.straatNaam = straatNaam;
     }
 
-    public int getHuisNr() {
+    public String getHuisNr() {
         return huisNr;
     }
 
-    public void setHuisNr(int huisNr) {
+        public void setHuisNr(String huisNr) {
         this.huisNr = huisNr;
     }
 
