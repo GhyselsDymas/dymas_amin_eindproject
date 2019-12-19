@@ -5,6 +5,7 @@ import be.ehb.dymas_amin_eindproject.model.Persoon.PersoonVoorDierenWinkel;
 import be.ehb.dymas_amin_eindproject.model.Persoon.PersoonVoorDierenWinkelDAO;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.ModelMap;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
@@ -21,6 +22,7 @@ public class PersoonController {
     @Autowired
     PersoonVoorDierenWinkelDAO persoonDao;
 
+
 /*Nieuwe gebruiker aan te maken*/
     @ModelAttribute(value = "nUser")
     public PersoonVoorDierenWinkel userToSave() {
@@ -32,13 +34,18 @@ public class PersoonController {
         return persoonDao.findAll();
     }
 
+    @RequestMapping(value = "/login", method = RequestMethod.GET)
+    public String showIndex(ModelMap map) {
+        return "login";
+    }
+
     /*validatie van nieuwe gebruiker + opslaan van nieuwe gebruiker*/
-    @RequestMapping(value ={"/menu"} ,method = RequestMethod.POST)
-    public String saveUser(@ModelAttribute("nUser") @Valid PersoonVoorDierenWinkel nProduct, BindingResult bindingResult){
+    @RequestMapping(value ={"/login"} ,method = RequestMethod.POST)
+    public String saveUser(@ModelAttribute("nUser") @Valid PersoonVoorDierenWinkel nUser, BindingResult bindingResult){
         if(bindingResult.hasErrors())
             return "login";
 
-        persoonDao.save(nProduct);
+        persoonDao.save(nUser);
         return "redirect:/index";
     }
 }

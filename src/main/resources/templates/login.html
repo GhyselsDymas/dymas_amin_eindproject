@@ -25,12 +25,12 @@
     <title>Title</title>
 </head>
 <body>
-<!--
-<form th:action="@{~/winkelmand}" method="post" th:object="${nUser}">
+
+<form th:action="@{~/login}" method="post" th:object="${nUser}">
     <div class="form-group">
         <label for="email" class="input-group-text">Email</label>
         <input type="email" id="email" class="form-control" th:field="*{mail}" placeholder="Voer uw emailadres in">
-        <span th:if="${#fields.hasErrors('email')}" class="error"></span>
+        <span th:if="${#fields.hasErrors('mail')}" class="error"></span>
     </div>
     <div class="form-group">
         <label for="voorNaam" class="input-group-text">Voornaam</label>
@@ -45,36 +45,37 @@
     <div class="form-group">
         <label for="telefoonNr" class="input-group-text">Telefoonnummer</label>
         <input type="text" id="telefoonNr" class="form-control" th:field="*{telefoonNr}" placeholder="voer uw telefoonnummer in">
-        <span th:if="${#fields.hasErrors('telefoon-nummer')}" class="error"></span>
+        <span th:if="${#fields.hasErrors('telefoonNr')}" class="error"></span>
     </div>
     <div class="form-row">
         <div class="form-group col-md-8">
             <label for="inputStraat">Straat</label>
             <input type="text" class="form-control" id="inputStraat" th:field="*{straatNaam}" placeholder="Straatnaam">
-            <span th:if="${#fields.hasErrors('straat')}" class="error"></span>
+            <span th:if="${#fields.hasErrors('straatNaam')}" class="error"></span>
         </div>
         <div class="form-group col-md-4">
             <label for="inputHuisNr">Huisnummer</label>
             <input type="text" class="form-control" id="inputHuisNr" th:field="*{huisNr}" placeholder="A 18">
-            <span th:if="${#fields.hasErrors('huisnummer')}" class="error"></span>
+            <span th:if="${#fields.hasErrors('huisNr')}" class="error"></span>
             <div class="form-row">
                 <div class="form-group col-md-8">
                     <label for="inputCity">Gemeente/Stad</label>
                     <input type="text" class="form-control" id="inputCity" th:field="*{gemeente}" placeholder="Stad...">
-                    <span th:if="${#fields.hasErrors('gemeente/stad')}" class="error"></span>
+                    <span th:if="${#fields.hasErrors('gemeente')}" class="error"></span>
                 </div>
                 <div class="form-group col-md-4">
                     <label for="inputZip">Postcode</label>
                     <input type="text" class="form-control" id="inputZip" th:field="*{postCode}" placeholder="A 1000">
-                    <span th:if="${#fields.hasErrors('postcode')}" class="error"></span>
+                    <span th:if="${#fields.hasErrors('postCode')}" class="error"></span>
 
                 </div>
                 <div id="sub-knop">
-                    <input type="submit" class="btn btn-primary"></input>
+                    <input type="submit" class="btn btn-primary" href="/index"></input>
                 </div>
             </div>
-</form>
--->
+        </div>
+    </div>
+ </form>
 
 </body>
 </html>

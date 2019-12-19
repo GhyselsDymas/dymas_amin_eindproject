@@ -13,6 +13,12 @@ public class Cart {
         cartItems.add(new CartRow(product, 1));
     }
 
+    public static void removeFromCart(CartRow cartItem){
+        cartItems.clear();
+    }
+
+
+
     public static List<CartRow> getCartItems(){
         return cartItems;
     }

@@ -7,9 +7,7 @@ import be.ehb.dymas_amin_eindproject.model.Shoppingcart.CartRow;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.ModelAttribute;
-import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.*;
 
 import java.time.chrono.ChronoZonedDateTime;
 import java.util.List;
@@ -21,16 +19,22 @@ public class WinkelmandController {
     DierenProductDAO dao;
 
     @GetMapping(value = "/winkelmand")
-    public String showCart(ModelMap map){
+    public String showCart(ModelMap map) {
         map.addAttribute("all", Cart.getCartItems());
         return "winkelmand";
     }
 
     @GetMapping(value = "/winkelmand/add/{id}")
-    public String addToCart(@PathVariable(value = "id") int id){
+    public String addToCart(@PathVariable(value = "id") int id) {
         DierenProduct p = dao.findById(id).get();
         Cart.addToCart(p);
         return "redirect:/index";
     }
 
+    @GetMapping(value = "/winkelmand/delete/{id}")
+    public String deleteFromCart(@PathVariable(value = "id") int id) {
+        CartRow p= Cart.getCartItems().get(id);
+        Cart.removeFromCart(p);
+        return "redirect:/winkelmand";
+    }
 }
