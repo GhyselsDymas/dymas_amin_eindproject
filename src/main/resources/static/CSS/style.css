@@ -89,7 +89,9 @@ ul li a {
     height: 220px !important;
 }
 
-
+table{
+    text-align: center;
+}
 
 /*Media Qeury's*/
 

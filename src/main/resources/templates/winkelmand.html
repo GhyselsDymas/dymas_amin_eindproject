@@ -28,17 +28,19 @@
 <nav th:replace="~{menu::nav_menu(winkelmand)}"></nav>
 
 
-    <table id="producttable">
-        <thead>
+    <table id="producttable" class="table table-striped">
+        <thead class="thead-dark">
             <tr>
-                <th>product</th>
-                <th>hoeveelheid</th>
+                <th>Product</th>
+                <th>Hoeveelheid</th>
+                <th></th>
             </tr>
         </thead>
             <tbody>
                 <tr th:each="product : ${all}">
                     <td th:text="${product.dierenProduct.getProductNaam()}"></td>
                     <td th:text="${product.getAmount()}"></td>
+                    <td><button class="btn btn-danger">Delete</button></td>
                 </tr>
             </tbody>
     </table>
