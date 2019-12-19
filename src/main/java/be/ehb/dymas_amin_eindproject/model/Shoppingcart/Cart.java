@@ -15,13 +15,22 @@ public class Cart {
         cartItems.add(new CartRow(product, 1));
     }
 
-    public static void removeFromCart(CartRow cartItem){
-        cartItems.clear();
+    public static void removeFromCart(DierenProduct cartItem){
+        CartRow toRemove = null;
+
+        for (CartRow cr : cartItems) {
+            if(cr.getDierenProduct().equals(cartItem)){
+                toRemove = cr;
+            }
+        }
+
+        cartItems.remove(toRemove);
     }
 
     public static List<CartRow> getCartItems(){
         return cartItems;
     }
+
     public static BigDecimal maakTotaalPrijs() {
         BigDecimal totaalPrijs = new BigDecimal(0);
         for (CartRow row : cartItems) {

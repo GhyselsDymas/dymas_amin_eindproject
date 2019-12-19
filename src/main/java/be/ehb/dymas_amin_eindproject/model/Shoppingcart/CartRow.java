@@ -5,6 +5,7 @@ import be.ehb.dymas_amin_eindproject.model.DierenProduct.DierenProduct;
 import java.math.BigDecimal;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Objects;
 
 public class CartRow {
 
@@ -34,4 +35,5 @@ public class CartRow {
     public void setAmount(int amount) {
         this.amount = amount;
     }
+
 }

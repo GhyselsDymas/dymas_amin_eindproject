@@ -105,4 +105,16 @@ public class DierenProduct {
         this.filterProduct = filterProduct;
     }
 
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        DierenProduct that = (DierenProduct) o;
+        return id == that.id;
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(id);
+    }
 }

@@ -34,8 +34,9 @@ public class WinkelmandController {
 
     @GetMapping(value = "/winkelmand/delete/{id}")
     public String deleteFromCart(@PathVariable(value = "id") int id) {
-        CartRow p= Cart.getCartItems().get(id);
+        DierenProduct p = dao.findById(id).get();
         Cart.removeFromCart(p);
+
         return "redirect:/winkelmand";
     }
 }
