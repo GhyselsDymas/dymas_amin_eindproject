@@ -1,9 +1,13 @@
 package be.ehb.dymas_amin_eindproject.model.Persoon;
 
+import org.springframework.beans.factory.annotation.Value;
+
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.validation.constraints.NotBlank;
+import javax.validation.constraints.NotEmpty;
 import javax.validation.constraints.NotNull;
 /**
  * @author Ahmadi Baloutaki Amin
@@ -16,21 +20,21 @@ class PersoonVoorDierenWinkel {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int idPersoon;
-    @NotNull(message = "voornaam mag niet leeg zijn")
+    @NotEmpty(message = "voornaam mag niet leeg zijn")
     private String voorNaam;
-    @NotNull(message = "achternaam mag niet leeg zijn")
+    @NotEmpty(message = "achternaam mag niet leeg zijn")
     private String achterNaam;
-    @NotNull(message = "mail mag niet leeg zijn")
+    @NotEmpty(message = "mail mag niet leeg zijn")
     private String mail;
-    @NotNull(message = "telefoon-nummer mag niet leeg zijn")
+    @NotEmpty(message = "telefoon-nummer mag niet leeg zijn")
     private String telefoonNr;
-    @NotNull(message = "straatnaam mag niet leeg zijn")
+    @NotEmpty(message = "straatnaam mag niet leeg zijn")
     private String straatNaam;
     @NotNull(message = "huisnummer mag niet leeg zijn")
     private int huisNr;
-    @NotNull(message = "postcode mag niet leeg zijn")
+    @NotEmpty(message = "postcode mag niet leeg zijn")
     private String postCode;
-    @NotNull(message = "stad mag niet leeg zijn")
+    @NotEmpty(message = "stad mag niet leeg zijn")
     private String gemeente;
 
     public PersoonVoorDierenWinkel() {

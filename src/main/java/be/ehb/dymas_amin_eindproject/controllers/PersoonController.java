@@ -42,9 +42,9 @@ public class PersoonController {
     /*validatie van nieuwe gebruiker + opslaan van nieuwe gebruiker*/
     @RequestMapping(value ={"/login"} ,method = RequestMethod.POST)
     public String saveUser(@ModelAttribute("nUser") @Valid PersoonVoorDierenWinkel nUser, BindingResult bindingResult){
-        if(bindingResult.hasErrors())
+        if(bindingResult.hasErrors()) {
             return "login";
-
+        }
         persoonDao.save(nUser);
         return "redirect:/index";
     }
