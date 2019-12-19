@@ -55,10 +55,21 @@
 
 <div class="container-fluid" th:if="${not all.isEmpty()}">
 
+    <h1>Voor te betalen</h1>
+    <p>Als je al een account hebt, geef uw mail hier dan in:</p>
     <form th:action="@{~/bedankt}">
         <div class="form-group">
-            <label for="email" class="input-group-text">Email</label>
-            <input type="email" id="email" class="form-control" placeholder="Voer uw emailadres in" required="required">
+            <label for="emails" class="input-group-text">Email</label>
+            <input type="email" id="emails" class="form-control" placeholder="Voer uw emailadres in" required="required">
+        </div>
+    </form>
+
+    <p>Als je nog geen account hebt, vul dan hier je gegevens in.</p>
+    <p>Zodat we het u kunnen verzenden</p>
+    <form th:action="@{~/bedankt}">
+        <div class="form-group">
+            <label for="emails" class="input-group-text">Email</label>
+            <input type="email" id="emails" class="form-control" placeholder="Voer uw emailadres in" required="required">
         </div>
         <div class="form-group">
             <label for="voorNaam" class="input-group-text">Voornaam</label>
