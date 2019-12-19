@@ -18,7 +18,7 @@ class PersoonVoorDierenWinkel {
     private int idPersoon;
     @NotNull(message = "voornaam mag niet leeg zijn")
     private String voorNaam;
-    @NotNull(message = "achternaam mag niet leefg zijn")
+    @NotNull(message = "achternaam mag niet leeg zijn")
     private String achterNaam;
     @NotNull(message = "mail mag niet leeg zijn")
     private String mail;
@@ -29,7 +29,9 @@ class PersoonVoorDierenWinkel {
     @NotNull(message = "huisnummer mag niet leeg zijn")
     private int huisNr;
     @NotNull(message = "postcode mag niet leeg zijn")
-    private String postcode;
+    private String postCode;
+    @NotNull(message = "stad mag niet leeg zijn")
+    private String gemeente;
 
     public PersoonVoorDierenWinkel() {
     }
@@ -90,11 +92,23 @@ class PersoonVoorDierenWinkel {
         this.huisNr = huisNr;
     }
 
-    public String getPostcode() {
-        return postcode;
+    public String getPostCode() {
+        return postCode;
     }
 
-    public void setPostcode(String postcode) {
-        this.postcode = postcode;
+    public void setPostCode(String postCode) {
+        this.postCode = postCode;
+    }
+
+    public String getGemeente() {
+        return gemeente;
+    }
+
+    public void setGemeente(String gemeente) {
+        this.gemeente = gemeente;
     }
 }
+
+
+
+
