@@ -4,6 +4,8 @@
 <!-- @author Ghysels dymas & Ahmadi Baloutaki Amin-->
 <!--CSS-->
 <link rel="stylesheet" th:href="@{~/style.css}">
+<script src="https://kit.fontawesome.com/1e64fb3f07.js" crossorigin="anonymous"></script>
+
 
 <nav th:fragment="nav_menu(page)" id="menu_style" class="navbar navbar-dark bg-dark">
     <ul>
@@ -30,7 +32,7 @@
             </div>
         </li>
         <li id="rechtsplaatsen">
-            <a th:href="@{~/winkelmand}" class="winkelmand">hdh</a>
+            <a th:href="@{~/winkelmand}" class="winkelmand"><i class="fas fa-shopping-cart"></i></a>
         </li>
     </ul>
 </nav>
