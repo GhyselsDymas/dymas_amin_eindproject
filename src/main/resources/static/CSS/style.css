@@ -87,6 +87,30 @@ ul li a {
 
 #sizerShop .card-body{
     height: 220px !important;
-    background-color: white;
 }
 
+
+
+/*Media Qeury's*/
+
+@media only screen and (max-width: 1315px) {
+    #sizerShop {
+        width: 33.33% !important;
+    }
+}
+
+@media only screen and (max-width: 1010px) {
+    #sizerShop {
+        width: 50% !important;
+    }
+}
+
+@media only screen and (max-width: 720px) {
+    .header{
+        display: none;
+    }
+
+    #sizerShop {
+        width: 100% !important;
+    }
+}
