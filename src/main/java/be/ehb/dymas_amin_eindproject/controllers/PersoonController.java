@@ -1,5 +1,6 @@
 package be.ehb.dymas_amin_eindproject.controllers;
 
+import be.ehb.dymas_amin_eindproject.model.DierenProduct.DierenProduct;
 import be.ehb.dymas_amin_eindproject.model.Persoon.PersoonVoorDierenWinkel;
 import be.ehb.dymas_amin_eindproject.model.Persoon.PersoonVoorDierenWinkelDAO;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -24,6 +25,11 @@ public class PersoonController {
     @ModelAttribute(value = "nUser")
     public PersoonVoorDierenWinkel userToSave() {
         return new PersoonVoorDierenWinkel();
+    }
+
+    @ModelAttribute(value = "allUser")
+    public Iterable<PersoonVoorDierenWinkel> getAllProducts() {
+        return persoonDao.findAll();
     }
 
     /*validatie van nieuwe gebruiker + opslaan van nieuwe gebruiker*/
