@@ -96,6 +96,10 @@ form {
     padding-top: 20px;
 }
 
+.bedankt {
+    text-align: center;
+}
+
 /*Media Qeury's*/
 
 @media only screen and (max-width: 1315px) {

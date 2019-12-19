@@ -1,7 +1,14 @@
 <!DOCTYPE html>
-<html lang="en"   xmlns:th="http://www.thymeleaf.org">
+<html lang="en"
+      xmlns:th="http://www.thymeleaf.org">
+
+<!-- @author Ghysels dymas-->
+
 <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta charset="UTF-8">
+
+    <!--CSS-->
     <link rel="stylesheet" th:href="@{~/CSS/style.css}">
 
     <script src="https://kit.fontawesome.com/1e64fb3f07.js" crossorigin="anonymous"></script>
@@ -15,13 +22,18 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
     <script src="//cdn.datatables.net/1.10.20/js/jquery.dataTables.min.js"></script>
 
+
     <title>bedankt</title>
 </head>
 <body>
+<nav th:replace="~{menu::nav_menu(index)}"></nav>
 
-<p>We gaan er zo mee aan de slag. Bedankt Voor Uw Bestelling!</p>
-<img src="/images/rendier.jpg">
+<div class="container-fluid bedankt">
 
+    <h1>We gaan er zo mee aan de slag.</h1>
+    <h1>Bedankt Voor Uw Bestelling!</h1>
+    <img src="/images/rendier.jpg" class="img-fluid">
 
+</div>
 </body>
 </html>
