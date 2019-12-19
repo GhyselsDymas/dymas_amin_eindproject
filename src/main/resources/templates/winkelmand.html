@@ -24,13 +24,21 @@
 <body>
 <nav th:replace="~{menu::nav_menu(winkelmand)}"></nav>
 
-    <div th:each="product : ${all}" class="OddStyle">
 
-        <div class="card" id="sizerShop">
-                <h5 class="card-title" th:text="${product.dierenProduct.getProductNaam()}"></h5>
-                <p class="card-text" th:text="${product.getAmount()}"></p>
-        </div>
+    <table id="producttable">
+        <thead>
+            <tr>
+                <th>product</th>
+                <th>hoeveelheid</th>
+            </tr>
+        </thead>
+            <tbody>
+                <tr th:each="product : ${all}">
+                    <td th:text="${product.dierenProduct.getProductNaam()}"></td>
+                    <td th:text="${product.getAmount()}"></td>
+                </tr>
+            </tbody>
+    </table>
 
-    </div>
 </body>
 </html>

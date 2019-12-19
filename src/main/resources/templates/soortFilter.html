@@ -28,18 +28,19 @@
 <div class="container-fluid">
 
     <!--Plaatsen van al onze producten-->
-    <div th:each="product : ${TheSoort}" class="OddStyle">
-        <div>
-            <img th:src="${product.imageLink}">
-
-             <h1 th:text="${product.productNaam}"></h1>
-
-             <p th:text="${product.beschrijving}"></p>
-             <p th:text="${product.prijs}"></p>
-
-             <button>Voeg toe</button>
-         </div>
-     </div>
+    <div id="shop-wrapper">
+        <div th:each="product : ${TheSoort}" class="OddStyle">
+            <div class="card" id="sizerShop">
+                <div class="img-wrapper"><img th:src="${product.imageLink}" class="card-img-top"></div>
+                <div class="card-body">
+                    <h5 class="card-title" th:text="${product.productNaam}"></h5>
+                    <p class="card-text small" th:text="${product.beschrijving}"></p>
+                    <p class="card-text" th:text="${product.prijs}"></p>
+                    <a th:href="@{/winkelmand/add/{id}(id = ${product.id})}" class="btn btn-primary">Voeg toe</a>
+                </div>
+            </div>
+        </div>
+    </div>
 
  </div>
 
