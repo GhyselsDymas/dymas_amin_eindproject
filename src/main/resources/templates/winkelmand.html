@@ -33,6 +33,7 @@
             <tr>
                 <th>Product</th>
                 <th>Hoeveelheid</th>
+                <th>Prijs</th>
                 <th></th>
             </tr>
         </thead>
@@ -40,8 +41,15 @@
                 <tr th:each="product : ${all}">
                     <td th:text="${product.dierenProduct.getProductNaam()}"></td>
                     <td th:text="${product.getAmount()}"></td>
+                    <td th:text="${product.dierenProduct.getPrijs()}"></td>
                     <td><a class="btn btn-danger" th:href="@{/winkelmand/delete/{id}(id = ${product.dierenProduct.getId()})}">Delete</a></td>
                 </tr>
+            <tr>
+                <td>Totaal</td>
+                <td></td>
+                <td th:text="${totaalprijs}"></td>
+
+            </tr>
             </tbody>
     </table>
 

@@ -22,16 +22,15 @@ public class PersoonController {
     @Autowired
     PersoonVoorDierenWinkelDAO persoonDao;
 
+    @ModelAttribute(value = "allUser")
+    public Iterable<PersoonVoorDierenWinkel> getAllUser() {
+        return persoonDao.findAll();
+    }
 
 /*Nieuwe gebruiker aan te maken*/
     @ModelAttribute(value = "nUser")
     public PersoonVoorDierenWinkel userToSave() {
         return new PersoonVoorDierenWinkel();
-    }
-
-    @ModelAttribute(value = "allUser")
-    public Iterable<PersoonVoorDierenWinkel> getAllProducts() {
-        return persoonDao.findAll();
     }
 
     @RequestMapping(value = "/login", method = RequestMethod.GET)

@@ -21,6 +21,7 @@ public class WinkelmandController {
     @GetMapping(value = "/winkelmand")
     public String showCart(ModelMap map) {
         map.addAttribute("all", Cart.getCartItems());
+        map.addAttribute("totaalprijs", Cart.maakTotaalPrijs());
         return "winkelmand";
     }
 
