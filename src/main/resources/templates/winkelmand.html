@@ -48,10 +48,48 @@
                 <td>Totaal</td>
                 <td></td>
                 <td th:text="${totaalprijs}"></td>
-
+                <td></td>
             </tr>
             </tbody>
     </table>
 
+<div class="container-fluid">
+
+    <form>
+        <div class="form-group">
+            <label for="email" class="input-group-text">Email</label>
+            <input type="email" id="email" class="form-control" placeholder="Voer uw emailadres in" required="required">
+        </div>
+        <div class="form-group">
+            <label for="voorNaam" class="input-group-text">Voornaam</label>
+            <input type="text" id="voorNaam" class="form-control" placeholder="Voer uw voornaam in" required="required">
+        </div>
+        <div class="form-group">
+            <label for="achterNaam" class="input-group-text">Achternaam</label>
+            <input type="text" id="achterNaam" class="form-control" placeholder="voer uw achternaam in" required="required">
+        </div>
+        <div class="form-row">
+            <div class="form-group col-md-8">
+                <label for="inputStraat">Straat</label>
+                <input type="text" class="form-control" id="inputStraat" placeholder="Straatnaam" required="required">
+            </div>
+            <div class="form-group col-md-4">
+                <label for="inputHuisNr">Huisnummer</label>
+                <input type="text" class="form-control" id="inputHuisNr" placeholder="A 18" required="required">
+            </div>
+            <div class="form-group col-md-8">
+                <label for="inputCity">Gemeente/Stad</label>
+                <input type="text" class="form-control" id="inputCity" placeholder="Stad..." required="required">
+            </div>
+            <div class="form-group col-md-4">
+                <label for="inputZip">Postcode</label>
+                <input type="text"  class="form-control" id="inputZip" placeholder="A 1000" required="required">
+            </div>
+            <div id="sub-knop">
+                <input type="submit" class="btn btn-primary"  href="">
+            </div>
+        </div>
+    </form>
+</div>
 </body>
 </html>
