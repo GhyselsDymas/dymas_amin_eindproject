@@ -53,7 +53,7 @@
             </tbody>
     </table>
 
-<div class="container-fluid">
+<div class="container-fluid" th:if="${not all.isEmpty()}">
 
     <form th:action="@{~/bedankt}">
         <div class="form-group">
