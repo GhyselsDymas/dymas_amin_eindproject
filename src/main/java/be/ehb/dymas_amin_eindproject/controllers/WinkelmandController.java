@@ -61,7 +61,7 @@ public class WinkelmandController {
         if (p.isPresent()) {
             return "redirect:/winkelmand/deleteCart";
         } else {
-            return "redirect:/winkelmand";
+            return "redirect:/error";
         }
     }
 

@@ -119,6 +119,8 @@ footer {
     text-align: center;
 }
 
+.forbottom {margin-bottom: 100px;}
+
 /*Media Qeury's*/
 
 @media only screen and (max-width: 1315px) {
