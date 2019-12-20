@@ -5,7 +5,9 @@ import be.ehb.dymas_amin_eindproject.model.DierenProduct.DierenProduct;
 import java.math.BigDecimal;
 import java.util.ArrayList;
 import java.util.List;
-
+/**
+ * @author Ghysels Dymas & Ahmadi Baloutaki Amin
+ * */
 public class Cart {
 
     static List<CartRow> cartItems = new ArrayList<CartRow>();
@@ -39,4 +41,10 @@ public class Cart {
         }
         return totaalPrijs;
     }
+
+    public static void deleteCart(){
+        cartItems.clear();
+    }
+
+
 }

@@ -6,7 +6,9 @@ import java.math.BigDecimal;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
-
+/**
+ * @author Ghysels Dymas
+ * */
 public class CartRow {
 
     private DierenProduct dierenProduct;
