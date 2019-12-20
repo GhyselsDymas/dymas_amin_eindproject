@@ -7,7 +7,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
 /**
- * @author Ghysels Dymas
+ * @author Ghysels Dymas & Ahmadi Baloutaki Amin
  * */
 public class CartRow {
 

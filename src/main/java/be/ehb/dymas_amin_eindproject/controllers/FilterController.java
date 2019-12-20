@@ -26,7 +26,7 @@ public class FilterController {
         return dao.findAll();
     }
 
-    /*RequestMapping om op de pagina index terecht tekomen*/
+    /*RequestMapping om op de pagina index terecht te komen, het zorgt voor te filteren op soort*/
     @RequestMapping(value = {"/soortFilter/{soort}"}, method = RequestMethod.GET)
     public String showFilterSoort(ModelMap map , @PathVariable(value = "soort") String soort) {
         map.addAttribute("TheSoort", dao.findBySoort(soort));

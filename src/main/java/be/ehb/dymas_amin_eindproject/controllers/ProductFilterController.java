@@ -26,7 +26,7 @@ public class ProductFilterController {
         return dao.findAll();
     }
 
-    /*RequestMapping om op de pagina index terecht tekomen*/
+    /*RequestMapping om op de pagina index terecht tekomen, en filtert op product type*/
     @RequestMapping(value = {"/productFilter/{product}"}, method = RequestMethod.GET)
     public String showFilterProduct(ModelMap map , @PathVariable(value = "product") String product) {
         map.addAttribute("TheProduct", dao.findByFilterProduct(product));

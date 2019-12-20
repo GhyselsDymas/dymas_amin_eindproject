@@ -32,6 +32,7 @@ public class WinkelmandController {
         return new PersoonVoorDierenWinkel();
     }
 
+    /*Getmapping met een get cartItem, en ook een totale prijs*/
     @GetMapping(value = "/winkelmand")
     public String showCart(ModelMap map) {
         map.addAttribute("all", Cart.getCartItems());
@@ -39,6 +40,7 @@ public class WinkelmandController {
         return "winkelmand";
     }
 
+    /*voegt een item to aan cart*/
     @GetMapping(value = "/winkelmand/add/{id}")
     public String addToCart(@PathVariable(value = "id") int id) {
         DierenProduct p = dao.findById(id).get();
@@ -46,6 +48,7 @@ public class WinkelmandController {
         return "redirect:/index";
     }
 
+    /*delete een item van de cart*/
     @GetMapping(value = "/winkelmand/delete/{id}")
     public String deleteFromCart(@PathVariable(value = "id") int id) {
         DierenProduct p = dao.findById(id).get();
@@ -54,6 +57,7 @@ public class WinkelmandController {
         return "redirect:/winkelmand";
     }
 
+    /*Dit bekijkt of de mail al bestaat in onze database en als dit klopt zal hij doorverwijzen naar de delete all en dan verder naar de bedankt pagina*/
     @PostMapping(value = "/winkelmand/check")
     public String checkIfEmailExist(@ModelAttribute("email") PersoonVoorDierenWinkel persoon, ModelMap map) {
         Optional<PersoonVoorDierenWinkel> p = daoPersoon.findByMail(persoon.getMail());
@@ -65,10 +69,19 @@ public class WinkelmandController {
         }
     }
 
+    /*Delete da volledige winkelmand door op submit te drukken bij from zonder gebruiker*/
     @GetMapping(value = "/winkelmand/deleteCart")
     public String deleteCart(){
         Cart.deleteCart();
 
         return "redirect:/bedankt";
+    }
+
+    /*Onze delete all knop onder lijst*/
+    @GetMapping(value = "/winkelmand/deleteCartAll")
+    public String deleteCartAll(){
+        Cart.deleteCart();
+
+        return "redirect:/winkelmand";
     }
 }
