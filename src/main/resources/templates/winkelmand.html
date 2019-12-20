@@ -62,10 +62,16 @@
             <label for="emails" class="input-group-text">Email</label>
             <input type="email" id="emails" class="form-control" placeholder="Voer uw emailadres in" required="required">
         </div>
+        <div id="sub-knop">
+            <input type="submit" class="btn btn-primary">
+        </div>
     </form>
 
-    <p>Als je nog geen account hebt, vul dan hier je gegevens in.</p>
-    <p>Zodat we het u kunnen verzenden</p>
+    <div class="tekst-above-form">
+        <p >Als je nog geen account hebt, vul dan hier je gegevens in.</p>
+        <p>Zodat we het u kunnen verzenden</p>
+    </div>
+
     <form th:action="@{~/bedankt}">
         <div class="form-group">
             <label for="emails" class="input-group-text">Email</label>
