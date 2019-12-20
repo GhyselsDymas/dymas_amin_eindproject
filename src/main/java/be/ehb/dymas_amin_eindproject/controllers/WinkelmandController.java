@@ -12,7 +12,9 @@ import org.springframework.web.bind.annotation.*;
 
 import java.time.chrono.ChronoZonedDateTime;
 import java.util.List;
-
+/**
+ * @author Ghysels Dymas & Ahmadi Baloutaki Amin
+ * */
 @Controller
 public class WinkelmandController {
 
@@ -44,12 +46,10 @@ public class WinkelmandController {
         return "redirect:/winkelmand";
     }
 
-    @GetMapping(value = "/winkelmand/check/{email}")
-    public String checkIfEmailExist(@PathVariable(value = "email") String email) {
-        if (daoPersoon.findByMail(email) != null) {
-            return "redirect:/bedankt";
-        }
+    @GetMapping(value = "/winkelmand/deleteCart")
+    public String deleteCart() {
+        Cart.deleteCart();
 
-        return "winkelmand";
+        return "redirect:/bedankt";
     }
 }
