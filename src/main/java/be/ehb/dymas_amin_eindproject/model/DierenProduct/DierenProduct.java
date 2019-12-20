@@ -36,17 +36,13 @@ public class DierenProduct {
     @NotBlank (message = "Voeg een link van een afbeelding toe")
     private String imageLink;
 
-    private int amount;
-
     public DierenProduct() {
-        this.amount=0;
     }
 
-    public DierenProduct (String productNaam, BigDecimal prijs, Integer amount) {
+    public DierenProduct (String productNaam, BigDecimal prijs) {
         this.id = id;
         this.productNaam = productNaam;
         this.prijs = prijs;
-        this.amount = amount;
     }
 
     public String getImageLink() {

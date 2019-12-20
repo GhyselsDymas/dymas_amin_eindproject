@@ -2,6 +2,7 @@ package be.ehb.dymas_amin_eindproject.controllers;
 
 import be.ehb.dymas_amin_eindproject.model.DierenProduct.DierenProduct;
 import be.ehb.dymas_amin_eindproject.model.DierenProduct.DierenProductDAO;
+import be.ehb.dymas_amin_eindproject.model.Persoon.PersoonVoorDierenWinkelDAO;
 import be.ehb.dymas_amin_eindproject.model.Shoppingcart.Cart;
 import be.ehb.dymas_amin_eindproject.model.Shoppingcart.CartRow;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -17,6 +18,9 @@ public class WinkelmandController {
 
     @Autowired
     DierenProductDAO dao;
+
+    @Autowired
+    PersoonVoorDierenWinkelDAO daoPersoon;
 
     @GetMapping(value = "/winkelmand")
     public String showCart(ModelMap map) {
@@ -38,5 +42,14 @@ public class WinkelmandController {
         Cart.removeFromCart(p);
 
         return "redirect:/winkelmand";
+    }
+
+    @GetMapping(value = "/winkelmand/check/{email}")
+    public String checkIfEmailExist(@PathVariable(value = "email") String email) {
+        if (daoPersoon.findByMail(email) != null) {
+            return "redirect:/bedankt";
+        }
+
+        return "winkelmand";
     }
 }
