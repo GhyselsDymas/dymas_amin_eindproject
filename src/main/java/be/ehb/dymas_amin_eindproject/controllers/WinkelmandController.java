@@ -2,7 +2,6 @@ package be.ehb.dymas_amin_eindproject.controllers;
 
 import be.ehb.dymas_amin_eindproject.model.DierenProduct.DierenProduct;
 import be.ehb.dymas_amin_eindproject.model.DierenProduct.DierenProductDAO;
-import be.ehb.dymas_amin_eindproject.model.Persoon.PersoonVoorDierenWinkel;
 import be.ehb.dymas_amin_eindproject.model.Persoon.PersoonVoorDierenWinkelDAO;
 import be.ehb.dymas_amin_eindproject.model.Shoppingcart.Cart;
 import be.ehb.dymas_amin_eindproject.model.Shoppingcart.CartRow;
@@ -13,16 +12,15 @@ import org.springframework.web.bind.annotation.*;
 
 import java.time.chrono.ChronoZonedDateTime;
 import java.util.List;
-/**
- * @author Ghysels Dymas & Ahmadi Baloutaki Amin
- * */
+
 @Controller
 public class WinkelmandController {
 
     @Autowired
     DierenProductDAO dao;
+
     @Autowired
-    PersoonVoorDierenWinkelDAO persoonDao;
+    PersoonVoorDierenWinkelDAO daoPersoon;
 
     @GetMapping(value = "/winkelmand")
     public String showCart(ModelMap map) {
@@ -45,10 +43,13 @@ public class WinkelmandController {
 
         return "redirect:/winkelmand";
     }
-    @GetMapping(value = "/winkelmand/deleteCart")
-    public String deleteCart() {
-        Cart.deleteCart();
 
-        return "redirect:/bedankt";
+    @GetMapping(value = "/winkelmand/check/{email}")
+    public String checkIfEmailExist(@PathVariable(value = "email") String email) {
+        if (daoPersoon.findByMail(email) != null) {
+            return "redirect:/bedankt";
+        }
+
+        return "winkelmand";
     }
 }
