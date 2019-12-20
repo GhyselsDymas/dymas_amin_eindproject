@@ -55,7 +55,7 @@
 
 <div class="container-fluid" th:if="${not all.isEmpty()}">
 
-    <h1>Voor te betalen</h1>
+    <h1>Om te betalen</h1>
     <p>Als je al een account hebt, geef uw mail hier dan in:</p>
     <form  th:object="${email}" th:action="@{/winkelmand/check}" method="post">
         <div class="form-group">
@@ -108,5 +108,8 @@
         </div>
     </form>
 </div>
+
+<footer th:replace="~{footer::footer_menu}"></footer>
+
 </body>
 </html>
